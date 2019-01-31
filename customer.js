@@ -2,6 +2,7 @@
 require("dotenv").config();
 var password = require("./pass.js");
 var mysql = require("mysql");
+var inquirer = require("inquirer");
 
 //Divider to diplayer cleaner code
 var divider = ("\n\n------------------------\n");
@@ -17,3 +18,20 @@ var connection = mysql.createConnection({
     password: pass,
     database: "bamazon"
 });
+
+function runSearch() {
+    inquirer
+        .prompt({
+            name: "",
+            type: "",
+            message: "",
+            choices: [
+                
+            ]
+        })
+        .then(function (answer) {
+            switch (answer) {
+                
+            }
+        });
+}
