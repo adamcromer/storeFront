@@ -21,17 +21,27 @@ var connection = mysql.createConnection({
 
 function runSearch() {
     inquirer
-        .prompt({
-            name: "",
-            type: "",
-            message: "",
-            choices: [
-                
-            ]
-        })
+        .prompt(
+            {
+                name: "action",
+                type: "list",
+                message: "Welcome to namehere. What product would you like to buy?",
+                choices: [
+
+                ]
+            },
+            {
+                name: "quantity",
+                type: "number",
+                message: "How many of product would you like to buy?",
+                choices: [
+
+                ]
+            }
+        )
         .then(function (answer) {
             switch (answer) {
-                
+
             }
         });
 }
