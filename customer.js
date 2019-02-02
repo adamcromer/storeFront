@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-function runSearch() {
+function startFunc() {
     inquirer
         .prompt(
             {
@@ -29,19 +29,21 @@ function runSearch() {
                 choices: [
 
                 ]
-            },
-            {
-                name: "quantity",
-                type: "number",
-                message: "How many of product would you like to buy?",
-                choices: [
-
-                ]
             }
         )
         .then(function (answer) {
-            switch (answer) {
-
-            }
+            
         });
+}
+
+function qtyFunc() {
+    inquirer
+        .prompt({
+            name: "quantity",
+            type: "number",
+            message: "How many of product would you like to buy?",
+            choices: [
+
+            ]
+        })
 }
