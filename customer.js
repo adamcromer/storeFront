@@ -19,6 +19,12 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("connected as id " + connection.threadId + "\n");
+    readInv();
+});
+
 function startFunc() {
     inquirer
         .prompt(
@@ -32,7 +38,7 @@ function startFunc() {
             }
         )
         .then(function (answer) {
-            
+
         });
 }
 
@@ -46,4 +52,14 @@ function qtyFunc() {
 
             ]
         })
+}
+
+function readInv() {
+    connection.query("SELECT * FROM products", function (err, res) {
+        if (err) throw err;
+
+        // Log all results of the SELECT statement
+        console.table(res);
+        connection.end();
+    });
 }
