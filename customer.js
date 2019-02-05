@@ -52,6 +52,9 @@ function qtyFunc() {
 
             ]
         })
+        .then(function (answer) {
+
+        });
 }
 
 function readInv() {
